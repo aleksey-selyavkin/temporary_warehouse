@@ -532,6 +532,7 @@ template {
 /* + */
 /* + */
 /* + */
+/* + */
 /* temp style */
 .header .wrapper .header-request, .first-screen .first-screen-content .content-btn, .rates .rates-plans .plan .rates-btn, .camp .camp-content .camp-info .camp-info-btn {
   font-size: 15px;
@@ -848,8 +849,8 @@ html, body {
   margin-right: 4px;
 }
 .rates .rates-plans .plan-champion {
-  border: none;
   width: calc(25% - 7px);
+  border: none;
 }
 .rates .rates-plans .plan h4 {
   font-size: 15px;
@@ -868,11 +869,6 @@ html, body {
   font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
   text-transform: uppercase;
 }
-.rates .rates-plans .plan .cost-champ {
-  font-family: "Gotham Pro Medium", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 38px;
-  color: #fff;
-}
 .rates .rates-plans .plan .desc {
   font-family: "proxima-nova-regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
@@ -888,7 +884,7 @@ html, body {
 .rates .rates-plans .plan ul li {
   list-style: none;
   background: url(../img/ul-check-gray.png) no-repeat;
-  padding: 0 8px 13px 28px;
+  padding: 0 13px 13px 28px;
   font-family: "proxima-nova-light", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 14px;
   letter-spacing: 0.03em;
@@ -921,7 +917,7 @@ html, body {
   color: #fff;
   margin-top: -32px;
   margin-bottom: -32px;
-  padding: 30px 13px 30px 23px;
+  padding: 30px 20px 30px 23px;
   box-shadow: 0 1px 50px 0 rgba(0, 0, 0, 0.36);
 }
 .rates .rates-plans .plan-champion .champion-circle {
@@ -956,10 +952,14 @@ html, body {
   font-size: 16px;
   white-space: nowrap;
   margin-top: 59px;
-  margin-left: -12px;
+  margin-left: -9px;
 }
 .rates .rates-plans .plan-champion .champion-circle .cost-champ {
   display: block;
+  font-family: "Gotham Pro Medium", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 38px;
+  letter-spacing: 0.04em;
+  color: #fff;
   width: 56%;
   margin: 12px auto;
 }
@@ -968,8 +968,9 @@ html, body {
   font-size: 20px;
   color: #fff;
   position: relative;
-  top: -11px;
-  margin-right: 4px;
+  top: -12px;
+  left: 3px;
+  margin-right: 5px;
 }
 .rates .rates-plans .plan-champion ul li {
   background: url(../img/ul-check-white.png) no-repeat;
@@ -1052,10 +1053,6 @@ html, body {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -webkit-box-align: space-between;
-  -webkit-align-items: space-between;
-      -ms-flex-align: space-between;
-          align-items: space-between;
 }
 .instagram .wrapper .instagram-gallery .gallery-frame a {
   position: relative;
@@ -1267,7 +1264,7 @@ html, body {
 }
 .youtube .wrapper .youtube-gallery {
   font-size: 0;
-  margin: 0 -15px 113px -15px;
+  margin: -15px -15px 128px -15px;
 }
 .youtube .wrapper .youtube-gallery a {
   display: inline-block;
@@ -1275,9 +1272,17 @@ html, body {
   vertical-align: top;
   text-align: left;
   width: 25%;
-  padding: 0 15px;
-  margin-bottom: 25px;
+  padding: 15px 15px 0;
+  margin-bottom: 10px;
   text-decoration: none;
+  -webkit-transition: box-shadow .3s;
+          transition: box-shadow .3s;
+}
+.youtube .wrapper .youtube-gallery a:hover {
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+.youtube .wrapper .youtube-gallery a img {
+  width: 100%;
 }
 .youtube .wrapper .youtube-gallery a .desc {
   font-family: "proxima-nova-regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -1293,7 +1298,10 @@ html, body {
 }
 
 /* testimonials */
-.testimonials .title {
+.testimonials {
+  position: relative;
+}
+.testimonials .testimonials-title {
   font-family: "montserrat-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 32px;
   color: #1d1d22;
@@ -1303,6 +1311,17 @@ html, body {
   text-transform: uppercase;
   padding: 127px 0 172px;
   letter-spacing: 0.01em;
+}
+.testimonials .testimonials-title:before {
+  content: "";
+  position: absolute;
+  top: -55px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 2px;
+  height: 106px;
+  background-color: #df1f1f;
 }
 .testimonials .slider {
   display: -webkit-box;
@@ -1328,16 +1347,10 @@ html, body {
   height: 100%;
   background: url(../img/testimonials-prev-slide.png);
   background-size: cover;
+  opacity: 1;
 }
-.testimonials .slider .prev-slide-bg .slide-title {
-  position: absolute;
-  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 40px;
-  line-height: 48px;
-  color: #fff;
-  padding: 51px 114px 0 0;
-  text-align: right;
-  z-index: 1;
+.testimonials .slider .prev-slide-bg:hover {
+  opacity: 0;
 }
 .testimonials .slider .prev-slide-overlay {
   position: absolute;
@@ -1347,14 +1360,93 @@ html, body {
   opacity: 0;
   -webkit-transition: opacity .2s linear;
           transition: opacity .2s linear;
+  z-index: 1;
 }
 .testimonials .slider .prev-slide-overlay:hover {
   opacity: 1;
 }
+.testimonials .slider .prev-slide-title {
+  position: absolute;
+  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 40px;
+  line-height: 48px;
+  color: #fff;
+  padding: 51px 114px 0 0;
+  text-align: right;
+  z-index: 1;
+}
+.testimonials .slider .prev-slide-title:before {
+  content: "";
+  position: absolute;
+  top: 59px;
+  right: 25px;
+  width: 55px;
+  height: 34px;
+  background: url(../img/slider-arrows.png);
+}
+.testimonials .slider .prev-slide-title:after {
+  content: "";
+  position: absolute;
+  top: 75px;
+  right: -179px;
+  width: 204px;
+  height: 2px;
+  background: #df1f1f;
+}
 .testimonials .slider .active-slide {
+  position: relative;
   width: 42.7%;
   background: url(../img/testimonials-active-slide.png);
+}
+.testimonials .slider .active-slide-title {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  background-color: #df1f1f;
+  color: #fff;
+  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 17px;
+  padding: 68px 32px 28px;
+}
+.testimonials .slider .active-slide-play-btn {
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: url(../img/slider-play-btn.png);
   cursor: pointer;
+}
+.testimonials .slider .active-slide-play-btn:hover {
+  background: url(../img/slider-play-btn.png) 100%;
+}
+.testimonials .slider .active-slide:before {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  margin: 0 auto;
+  width: calc(100% - 25px);
+  background-color: #ebebeb;
+}
+.testimonials .slider .active-slide:after {
+  content: "";
+  position: absolute;
+  bottom: -17px;
+  left: 0;
+  right: 0;
+  height: 7px;
+  margin: 0 auto;
+  width: calc(100% - 38px);
+  background: #f7f7f7;
 }
 .testimonials .slider .next-slide {
   position: relative;
@@ -1368,15 +1460,6 @@ html, body {
   background: url(../img/testimonials-next-slide.png);
   background-size: cover;
 }
-.testimonials .slider .next-slide-bg .slide-title {
-  position: absolute;
-  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
-  font-size: 40px;
-  line-height: 47px;
-  color: #fff;
-  padding: 52px 0 0 112px;
-  z-index: 1;
-}
 .testimonials .slider .next-slide-overlay {
   position: absolute;
   width: 100%;
@@ -1388,6 +1471,251 @@ html, body {
 }
 .testimonials .slider .next-slide-overlay:hover {
   opacity: 1;
+}
+.testimonials .slider .next-slide-title {
+  position: absolute;
+  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 40px;
+  line-height: 47px;
+  color: #fff;
+  padding: 52px 0 0 112px;
+  z-index: 1;
+}
+.testimonials .slider .next-slide-title:before {
+  content: "";
+  position: absolute;
+  top: 59px;
+  left: 25px;
+  width: 55px;
+  height: 34px;
+  background: url(../img/slider-arrows.png) 100% 0;
+}
+.testimonials .slider .next-slide-title:after {
+  content: "";
+  position: absolute;
+  top: 75px;
+  left: -179px;
+  width: 204px;
+  height: 2px;
+  background: #df1f1f;
+}
+.testimonials .slider-nav {
+  position: relative;
+  top: -93px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.testimonials .slider-nav .slide-nav-btn {
+  box-sizing: border-box;
+  background-color: #ddd;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 11px;
+  cursor: pointer;
+}
+.testimonials .slider-nav .slide-nav-btn.active {
+  background-color: #fff;
+  border: 3px solid #df1f1f;
+}
+.testimonials .slider-nav .slide-nav-btn:after {
+  content: "";
+  position: absolute;
+  bottom: -187px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 2px;
+  height: 106px;
+  background-color: #df1f1f;
+}
+
+/* contact */
+.contacts {
+  position: relative;
+}
+.contacts:before {
+  content: "";
+  position: absolute;
+  top: 17px;
+  left: 0;
+  width: 65px;
+  height: calc(100%);
+  background-color: #f5f5f5;
+}
+.contacts:after {
+  content: "";
+  position: absolute;
+  top: 17px;
+  right: 0;
+  width: 65px;
+  height: calc(100%);
+  background-color: #f5f5f5;
+}
+.contacts .contacts-title {
+  font-family: "montserrat-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 32px;
+  color: #1d1d22;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 146px;
+}
+.contacts .contacts-wrapper {
+  width: 72.5%;
+  margin: 0 auto;
+}
+.contacts .contacts-wrapper .contacts-info .mail {
+  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 26px;
+  letter-spacing: 0.006em;
+  margin: 90px 0 20px;
+}
+.contacts .contacts-wrapper .contacts-info .mail:before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 24px;
+  background: url(../img/mail-phone.png);
+  margin-right: 22px;
+}
+.contacts .contacts-wrapper .contacts-info .mail a {
+  color: #1d1d22;
+  vertical-align: top;
+}
+.contacts .contacts-wrapper .contacts-info .phone {
+  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 26px;
+}
+.contacts .contacts-wrapper .contacts-info .phone:before {
+  content: "";
+  display: inline-block;
+  width: 36px;
+  height: 24px;
+  background: url(../img/mail-phone.png) 100%;
+  margin-right: 20px;
+  position: relative;
+  top: 3px;
+}
+.contacts .contacts-wrapper .contacts-info .phone a {
+  color: #1d1d22;
+  text-decoration: none;
+}
+.contacts .contacts-wrapper .contacts-info .other {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 22px;
+}
+.contacts .contacts-wrapper .contacts-info .other .other-viber {
+  width: 47px;
+  height: 47px;
+  background: url(../img/viber-tg.png);
+}
+.contacts .contacts-wrapper .contacts-info .other .other-tg {
+  width: 47px;
+  height: 47px;
+  background: url(../img/viber-tg.png) 100%;
+}
+.contacts .contacts-wrapper .contacts-info .other .other-phone {
+  font-family: "proxima-nova-semibold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  line-height: 45px;
+  color: #1d1d22;
+  text-decoration: none;
+  padding: 2px 18px 0 19px;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(-17px);
+      -ms-transform: translateX(-17px);
+          transform: translateX(-17px);
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .first-couple {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .second-couple {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .second-couple .section:last-of-type {
+  border: none;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section {
+  position: relative;
+  font-family: "proxima-nova-regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-right: 1px solid #e7e7e7;
+  width: 100px;
+  margin-top: 65px;
+  padding-top: 12px;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 23px;
+  height: 22px;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-youtube:before {
+  background: url(../img/social-icons.png);
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-youtube:hover:before {
+  background: url(../img/social-icons.png) 0 100%;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-fb:before {
+  background: url(../img/social-icons.png) 69px 0;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-fb:hover:before {
+  background: url(../img/social-icons.png) 69px 100%;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-inst:before {
+  background: url(../img/social-icons.png) 46px 0;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-inst:hover:before {
+  background: url(../img/social-icons.png) 46px 100%;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-vk:before {
+  background: url(../img/social-icons.png) 23px 0;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section-vk:hover:before {
+  background: url(../img/social-icons.png) 23px 100%;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section .count {
+  font-size: 19px;
+  color: #1d1d22;
+  margin-bottom: 0;
+}
+.contacts .contacts-wrapper .contacts-info .contacts-social .section .watching {
+  font-size: 11px;
+  color: #939393;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 
 @media screen and (max-width: 1200px) {

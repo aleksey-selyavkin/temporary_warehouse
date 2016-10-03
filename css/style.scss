@@ -15,7 +15,7 @@ $proxima-nova-light: "proxima-nova-light", Arial, "Helvetica Neue", Helvetica, s
 $proxima-nova-light-italic: "proxima-nova-light-italic", Arial, "Helvetica Neue", Helvetica, sans-serif;
 $proxima-nova-regular: "proxima-nova-regular", Arial, "Helvetica Neue", Helvetica, sans-serif; /* + */
 $proxima-nova-regular-italic: "proxima-nova-regular-italic", Arial, "Helvetica Neue", Helvetica, sans-serif; /* + */
-$proxima-nova-semibold: "proxima-nova-semibold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+$proxima-nova-semibold: "proxima-nova-semibold", Arial, "Helvetica Neue", Helvetica, sans-serif; /* + */
 $proxima-nova-semibold-italic: "proxima-nova-semibold-italic", Arial, "Helvetica Neue", Helvetica, sans-serif;
 $proxima-nova-bold: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif; /* + */
 $proxima-nova-bold-italic: "proxima-nova-bold-italic", Arial, "Helvetica Neue", Helvetica, sans-serif;
@@ -294,8 +294,8 @@ html, body {
 				}
 			}
 			&-champion {
-				border: none;
 				width: calc(25% - 7px);
+				border: none;
 			}
 			h4 {
 				font-size: 15px;
@@ -314,11 +314,6 @@ html, body {
 					text-transform: uppercase;
 				}
 			}
-			.cost-champ {
-				font-family: $gotham-pro-medium;
-				font-size: 38px;
-				color: $main-white;
-			}
 			.desc {
 				font-family: $proxima-nova-regular;
 				font-size: 14px;
@@ -333,7 +328,7 @@ html, body {
 				li {
 					list-style: none;
 					background: url(../img/ul-check-gray.png) no-repeat;
-					padding: 0 8px 13px 28px;
+					padding: 0 13px 13px 28px;
 					font-family: $proxima-nova-light;
 					font-size: 14px;
 					letter-spacing: 0.03em;
@@ -366,7 +361,7 @@ html, body {
 			color: $main-white;
 			margin-top: -32px;
 			margin-bottom: -32px;
-			padding: 30px 13px 30px 23px;
+			padding: 30px 20px 30px 23px;
 			box-shadow: 0 1px 50px 0 rgba(0,0,0,.36);
 			.champion-circle {
 				position: relative;
@@ -399,10 +394,14 @@ html, body {
 					font-size: 16px;
 					white-space: nowrap;
 					margin-top: 59px;
-					margin-left: -12px;
+					margin-left: -9px;
 				}
 				.cost-champ {
 					display: block;
+					font-family: $gotham-pro-medium;
+					font-size: 38px;
+					letter-spacing: 0.04em;
+					color: $main-white;
 					width: 56%;
 					margin: 12px auto;
 					&:before {
@@ -410,8 +409,9 @@ html, body {
 						font-size: 20px;
 						color: $main-white;
 						position: relative;
-						top: -11px;
-						margin-right: 4px;
+						top: -12px;
+						left: 3px;
+						margin-right: 5px;
 					}
 				}
 			}
@@ -492,7 +492,6 @@ html, body {
 				display: flex;
 				flex-wrap: wrap;
 				justify-content: space-between;
-				align-items: space-between;
 				a {
 					position: relative;
 					width: 23%;
@@ -700,16 +699,23 @@ html, body {
 		}
 		.youtube-gallery {
 			font-size: 0;
-			margin: 0 -15px 113px -15px;
+			margin: -15px -15px 128px -15px;
 			a {
 				display: inline-block;
 				box-sizing: border-box;
 				vertical-align: top;
 				text-align: left;
 				width: 25%;
-				padding: 0 15px;
-				margin-bottom: 25px;
+				padding: 15px 15px 0;
+				margin-bottom: 10px;
 				text-decoration: none;
+				transition: box-shadow .3s;
+				&:hover {
+					box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
+				}
+				img {
+					width: 100%;
+				}
 				.desc {
 					font-family: $proxima-nova-regular;
 					font-size: 16px;
@@ -729,7 +735,8 @@ html, body {
 
 /* testimonials */
 .testimonials {
-	.title {
+	position: relative;
+	.testimonials-title {
 		font-family: $montserrat-bold;
 		font-size: 32px;
 		color: #1d1d22;
@@ -738,6 +745,17 @@ html, body {
 		text-transform: uppercase;
 		padding: 127px 0 172px;
 		letter-spacing: 0.01em;
+		&:before {
+			content: "";
+			position: absolute;
+			top: -55px;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 2px;
+			height: 106px;
+			background-color: $main-red;
+		}
 	}
 	.slider {
 		display: flex;
@@ -755,15 +773,9 @@ html, body {
 				height: 100%;
 				background: url(../img/testimonials-prev-slide.png);
 				background-size: cover;
-				.slide-title {
-					position: absolute;
-					font-family: $proxima-nova-bold;
-					font-size: 40px;
-					line-height: 48px;
-					color: $main-white;
-					padding: 51px 114px 0 0;
-					text-align: right;
-					z-index: 1;
+				opacity: 1;
+				&:hover {
+					opacity: 0;
 				}
 			}
 			&-overlay {
@@ -773,15 +785,90 @@ html, body {
 				background: url(../img/testimonials-prev-slide-overlay.png);
 				opacity: 0;
 				transition: opacity .2s linear;
+				z-index: 1;
 				&:hover {
 					opacity: 1;
 				}
 			}
+			&-title {
+				position: absolute;
+				font-family: $proxima-nova-bold;
+				font-size: 40px;
+				line-height: 48px;
+				color: $main-white;
+				padding: 51px 114px 0 0;
+				text-align: right;
+				z-index: 1;
+				&:before {
+					content: "";
+					position: absolute;
+					top: 59px;
+					right: 25px;
+					width: 55px;
+					height: 34px;
+					background: url(../img/slider-arrows.png);
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					top: 75px;
+					right: -179px;
+					width: 204px;
+					height: 2px;
+					background: $main-red;
+				}
+			}
 		}
 		.active-slide {
+			position: relative;
 			width: 42.7%;
 			background: url(../img/testimonials-active-slide.png);
-			cursor: pointer;
+			&-title {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				background-color: $main-red;
+				color: $main-white;
+				font-family: $proxima-nova-bold;
+				font-size: 17px;
+				padding: 68px 32px 28px;
+			}
+			&-play-btn {
+				position: absolute;
+				top: 53%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 80px;
+				height: 80px;
+				background: url(../img/slider-play-btn.png);
+				cursor: pointer;
+				&:hover {
+					background: url(../img/slider-play-btn.png) 100%;
+				}
+			}
+			&:before {
+				content: "";
+				position: absolute;
+				bottom: -10px;
+				left: 0;
+				right: 0;
+				height: 10px;
+				margin: 0 auto;
+				width: calc(100% - 25px);
+				background-color: #ebebeb;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -17px;
+				left: 0;
+				right: 0;
+				height: 7px;
+				margin: 0 auto;
+				width: calc(100% - 38px);
+				background: #f7f7f7;
+			}
 		}
 		.next-slide {
 			position: relative;
@@ -793,15 +880,6 @@ html, body {
 				height: 100%;
 				background: url(../img/testimonials-next-slide.png);
 				background-size: cover;
-				.slide-title {
-					position: absolute;
-					font-family: $proxima-nova-bold;
-					font-size: 40px;
-					line-height: 47px;
-					color: $main-white;
-					padding: 52px 0 0 112px;
-					z-index: 1;
-				}
 			}
 			&-overlay {
 				position: absolute;
@@ -814,6 +892,233 @@ html, body {
 					opacity: 1;
 				}
 			}
+			&-title {
+				position: absolute;
+				font-family: $proxima-nova-bold;
+				font-size: 40px;
+				line-height: 47px;
+				color: $main-white;
+				padding: 52px 0 0 112px;
+				z-index: 1;
+				&:before {
+					content: "";
+					position: absolute;
+					top: 59px;
+					left: 25px;
+					width: 55px;
+					height: 34px;
+					background: url(../img/slider-arrows.png) 100% 0;
+				}
+				&:after {
+					content: "";
+					position: absolute;
+					top: 75px;
+					left: -179px;
+					width: 204px;
+					height: 2px;
+					background: $main-red;
+				}
+			}
+		}
+	}
+	.slider-nav {
+		position: relative;
+		top: -93px;
+		display: flex;
+		justify-content: center;
+		.slide-nav-btn {
+			box-sizing: border-box;
+			background-color: #ddd;
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			margin: 0 11px;
+			cursor: pointer;
+			&.active {
+				background-color: $main-white;
+				border: 3px solid $main-red;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				bottom: -187px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 2px;
+				height: 106px;
+				background-color: $main-red;
+			}
+		}
+	}
+}
+
+/* contact */
+.contacts {
+	position: relative;
+	&:before {
+		content: "";
+		position: absolute;
+		top: 17px;
+		left: 0;
+		width: 65px;
+		height: calc(100%);
+		background-color: #f5f5f5;
+	}
+	&:after {
+		content: "";
+		position: absolute;
+		top: 17px;
+		right: 0;
+		width: 65px;
+		height: calc(100%);
+		background-color: #f5f5f5;
+	}
+	.contacts-title {
+		font-family: $montserrat-bold;
+		font-size: 32px;
+		color: #1d1d22;
+		text-align: center;
+		text-transform: uppercase;
+		margin-top: 146px;
+	}
+	.contacts-wrapper {
+		width: 72.5%;
+		margin: 0 auto;
+		.contacts-info {
+			.mail {
+				font-family: $proxima-nova-bold;
+				font-size: 26px;
+				letter-spacing: 0.006em;
+				margin: 90px 0 20px;
+				&:before {
+					content: "";
+					display: inline-block;
+					width: 36px;
+					height: 24px;
+					background: url(../img/mail-phone.png);
+					margin-right: 22px
+				}
+				a {
+					color: #1d1d22;
+					vertical-align: top;
+				}	
+			}
+			.phone {
+				font-family: $proxima-nova-bold;
+				font-size: 26px;
+				&:before {
+					content: "";
+					display: inline-block;
+					width: 36px;
+					height: 24px;
+					background: url(../img/mail-phone.png) 100%;
+					margin-right: 20px;
+					position: relative;
+					top:3px;
+				}
+				a {
+					color: #1d1d22;
+					text-decoration: none;
+				}
+			}
+			.other {
+				display: flex;
+				align-items: center;
+				margin-top: 22px;
+				.other-viber {
+					width: 47px;
+					height: 47px;
+					background: url(../img/viber-tg.png);
+				}
+				.other-tg {
+					width: 47px;
+					height: 47px;
+					background: url(../img/viber-tg.png) 100%;
+				}
+				.other-phone {
+					font-family: $proxima-nova-semibold;
+					background-color: #f4f4f4;
+					font-size: 20px;
+					letter-spacing: 0.1em;
+					line-height: 45px;
+					color: #1d1d22;
+					text-decoration: none;
+					padding: 2px 18px 0 19px;
+				}
+			}
+			.contacts-social {
+				display: flex;
+				transform: translateX(-17px);
+				.first-couple {
+					display: flex;
+				}
+				.second-couple {
+					display: flex;
+					.section:last-of-type {
+						border: none;
+					}
+				}
+				.section {
+					position: relative;
+					font-family: $proxima-nova-regular;
+					text-align: center;
+					text-decoration: none;
+					box-sizing: border-box;
+					border-right: 1px solid #e7e7e7;
+					width: 100px;
+					margin-top: 65px;
+					padding-top: 12px;
+					&:before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						margin: 0 auto;
+						width: 23px;
+						height: 22px;
+					}
+					&-youtube:before {
+						background: url(../img/social-icons.png);
+					}
+					&-youtube:hover:before {
+						background: url(../img/social-icons.png) 0 100%;
+					}
+					&-fb:before {
+						background: url(../img/social-icons.png) 69px 0;
+					}
+					&-fb:hover:before {
+						background: url(../img/social-icons.png) 69px 100%;
+					}
+					&-inst:before {
+						background: url(../img/social-icons.png) 46px 0;
+					}
+					&-inst:hover:before {
+						background: url(../img/social-icons.png) 46px 100%;
+					}
+					&-vk:before {
+						background: url(../img/social-icons.png) 23px 0;
+					}
+					&-vk:hover:before {
+						background: url(../img/social-icons.png) 23px 100%;
+					}
+					.count {
+						font-size: 19px;
+						color: #1d1d22;
+						margin-bottom: 0;
+					}
+					.watching {
+						font-size: 11px;
+						color: #939393;
+						margin-top: 2px;
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+		.contacts-form {
+
 		}
 	}
 }
