@@ -1044,11 +1044,16 @@ html, body {
 .instagram .wrapper .instagram-gallery .instagram-bg {
   position: absolute;
   background-color: #df1f1f;
-  width: 900px;
+  width: 0px;
   height: calc(100% + 110px);
   top: -55px;
   left: -162px;
   z-index: -1;
+  -webkit-transition: width 1s linear;
+          transition: width 1s linear;
+}
+.instagram .wrapper .instagram-gallery .slide {
+  width: 900px;
 }
 .instagram .wrapper .instagram-gallery .gallery-frame {
   display: -webkit-box;
@@ -1193,7 +1198,13 @@ html, body {
 }
 .camp .camp-content .camp-info .camp-info-header .block-map a {
   font-size: 14px;
+  vertical-align: bottom;
   color: #df1f1f;
+  position: relative;
+  top: 2px;
+}
+.camp .camp-content .camp-info .camp-info-header .block-map a:hover {
+  text-decoration: none;
 }
 .camp .camp-content .camp-info .camp-info-list {
   background-color: #f9f9f9;
@@ -1350,39 +1361,41 @@ html, body {
   width: 26.4%;
   cursor: pointer;
 }
-.testimonials .slider .prev-slide-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url(../img/testimonials-prev-slide.png);
-  background-size: cover;
+.testimonials .slider .prev-slide:hover .prev-slide-overlay {
   opacity: 1;
 }
-.testimonials .slider .prev-slide-bg:hover {
-  opacity: 0;
+.testimonials .slider .prev-slide:hover .prev-slide-title:before {
+  background: url(../img/slider-arrows.png) 0 100%;
 }
 .testimonials .slider .prev-slide-overlay {
   position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/testimonials-prev-slide-overlay.png);
   width: 100%;
   height: 100%;
-  background: url(../img/testimonials-prev-slide-overlay.png);
   opacity: 0;
+  z-index: 1;
   -webkit-transition: opacity .2s linear;
           transition: opacity .2s linear;
-  z-index: 1;
 }
-.testimonials .slider .prev-slide-overlay:hover {
-  opacity: 1;
+.testimonials .slider .prev-slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/testimonials-prev-slide.png);
+  width: 100%;
+  height: 100%;
 }
 .testimonials .slider .prev-slide-title {
-  position: absolute;
+  position: relative;
   font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 40px;
   line-height: 48px;
   color: #fff;
   padding: 51px 114px 0 0;
   text-align: right;
-  z-index: 1;
+  z-index: 2;
 }
 .testimonials .slider .prev-slide-title:before {
   content: "";
@@ -1462,24 +1475,31 @@ html, body {
   width: 26.4%;
   cursor: pointer;
 }
-.testimonials .slider .next-slide-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: url(../img/testimonials-next-slide.png);
-  background-size: cover;
+.testimonials .slider .next-slide:hover .next-slide-overlay {
+  opacity: 1;
+}
+.testimonials .slider .next-slide:hover .next-slide-title:before {
+  background: url(../img/slider-arrows.png) 100% 100%;
 }
 .testimonials .slider .next-slide-overlay {
   position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/testimonials-next-slide-overlay.png);
   width: 100%;
   height: 100%;
-  background: url(../img/testimonials-next-slide-overlay.png);
   opacity: 0;
+  z-index: 1;
   -webkit-transition: opacity .2s linear;
           transition: opacity .2s linear;
 }
-.testimonials .slider .next-slide-overlay:hover {
-  opacity: 1;
+.testimonials .slider .next-slide-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../img/testimonials-next-slide.png);
+  width: 100%;
+  height: 100%;
 }
 .testimonials .slider .next-slide-title {
   position: absolute;
@@ -1487,8 +1507,8 @@ html, body {
   font-size: 40px;
   line-height: 47px;
   color: #fff;
-  padding: 52px 0 0 112px;
-  z-index: 1;
+  padding: 53px 0 0 112px;
+  z-index: 2;
 }
 .testimonials .slider .next-slide-title:before {
   content: "";
@@ -1573,7 +1593,7 @@ html, body {
   color: #1d1d22;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 145px;
+  margin-top: 146px;
 }
 .contacts .contacts-wrapper {
   display: -webkit-box;
@@ -1585,7 +1605,7 @@ html, body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 72.5%;
-  margin: 91px auto 0;
+  margin: 90px auto 0;
 }
 .contacts .contacts-wrapper .contacts-info .mail {
   font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;

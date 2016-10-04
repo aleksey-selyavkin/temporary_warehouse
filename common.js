@@ -8,12 +8,20 @@ $(document).ready(function(){
     	return false;
     });
 
+	// slide instagram background
+    var h = $(window).height();
+    $(window).scroll(function(){
+      if ( ($(this).scrollTop()+h) >= $("#startToSlide").offset().top) {
+        $(".instagram-bg").addClass('slide');
+      }
+    });
+
     // vk subscribers
 	$.ajax({  
-		url: 'http://api.vk.com/method/users.get?user_ids=12269207&fields=followers_count',
+		url: "http://api.vk.com/method/users.get?user_ids=12269207&fields=followers_count",
 		dataType: "jsonp",
 		success:function(e){ 
-				$('#vkontakte_count').html(e.response[0].followers_count);
+				$("#vk-count").html(e.response[0].followers_count);
 			}  
 	});
 
