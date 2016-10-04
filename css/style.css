@@ -675,7 +675,6 @@ html, body {
 
 /* first screen */
 .first-screen {
-  background: url(../img/first-screen-bg.png) 0 63px no-repeat;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -684,6 +683,7 @@ html, body {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+  background: url(../img/first-screen-bg-big.png) 0 63px no-repeat;
   min-height: calc(100vh - 109px);
 }
 .first-screen .first-screen-content {
@@ -1867,16 +1867,75 @@ html, body {
 }
 
 @media screen and (max-width: 1200px) {
+  .header {
+    padding: 19px 0;
+  }
+  .header .wrapper {
+    width: 94%;
+  }
+  .header .wrapper .header-nav {
+    top: 15px;
+  }
+  .header .wrapper .nav-program {
+    display: none;
+  }
+  .header .wrapper .header-logo {
+    top: -4px;
+    width: 80px;
+    height: auto;
+  }
   .header .wrapper .header-social {
     display: none;
   }
+  .header .wrapper .header-request {
+    position: relative;
+    top: 0;
+    left: 7px;
+    padding: 11px 17px 10px;
+  }
 
+  .first-screen {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background: url(../img/first-screen-bg-small.png) 0 100% no-repeat;
+    min-height: none;
+  }
   .first-screen .first-screen-content {
-    width: 500px;
     margin: 0 auto;
+    padding-top: 68px;
   }
   .first-screen .first-screen-content .content-slogan {
-    width: 40%;
+    width: 621px;
+  }
+  .first-screen .first-screen-content .online-program {
+    font-size: 18px;
+    margin-top: 72px;
+    margin-bottom: 101px;
+  }
+  .first-screen .first-screen-content .content-achievements {
+    font-size: 16px;
+  }
+  .first-screen .first-screen-content .content-achievements .left {
+    width: 135px;
+    padding-top: 46px;
+    line-height: 19px;
+    margin-left: 59px;
+  }
+  .first-screen .first-screen-content .content-achievements .right {
+    width: 170px;
+    padding-top: 50px;
+    line-height: 19px;
+    margin-right: 59px;
+  }
+  .first-screen .first-screen-content .content-achievements .right:before {
+    left: -53px;
+    height: 105px;
+  }
+  .first-screen .first-screen-content .content-btn {
+    margin-top: 78px;
+    margin-bottom: 90px;
   }
 }
 

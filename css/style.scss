@@ -147,9 +147,9 @@ html, body {
 
 /* first screen */
 .first-screen {
-	background: url(../img/first-screen-bg.png) 0 63px no-repeat;
 	display: flex;
 	justify-content: flex-end;
+	background: url(../img/first-screen-bg-big.png) 0 63px no-repeat;
 	min-height: calc(100vh - 109px);
 	.first-screen-content {
 		margin-right: 153px;
@@ -1264,19 +1264,69 @@ html, body {
 
 @media screen and (max-width: 1200px) {
 	.header {
+		padding: 19px 0;
 		.wrapper {
+			width: 94%;
+			.header-nav {
+				top: 15px;
+			}
+			.nav-program {
+				display: none;
+			}
+			.header-logo {
+				top: -4px;
+				width: 80px;
+				height: auto;
+			}
 			.header-social {
 				display: none;
+			}
+			.header-request {
+				position: relative;
+				top: 0;
+				left: 7px;
+				padding: 11px 17px 10px;
 			}
 		}
 	}
 
 	.first-screen {
+		justify-content: center;
+		background: url(../img/first-screen-bg-small.png) 0 100% no-repeat;
+		min-height: none;
 		.first-screen-content {
-			width: 500px;
 			margin: 0 auto;
+			padding-top: 68px;
 			.content-slogan {
-				width: 40%;
+				width: 621px;
+			}
+			.online-program {
+				font-size: 18px;
+				margin-top: 72px; 
+				margin-bottom: 101px;
+			}
+			.content-achievements {
+				font-size: 16px;
+				.left {
+					width: 135px;
+					padding-top: 46px;
+					line-height: 19px;
+					margin-left: 59px;
+				}
+				.right {
+					width: 170px;
+					padding-top: 50px;
+					line-height: 19px;
+					margin-right: 59px;
+					&:before {
+						left: -53px;
+						height: 105px;
+					}
+				}
+			}
+			.content-btn {
+				margin-top: 78px;
+				margin-bottom: 90px;
 			}
 		}
 	}
