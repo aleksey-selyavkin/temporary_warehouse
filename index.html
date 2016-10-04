@@ -6,6 +6,7 @@
 	<link rel="icon" type="image/png" href="img/favicon.png" sizes="16x16">
 	<title>Training Program with Aleksey Torohtiy</title>
 	<link rel="stylesheet" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 </head>
 <body>
 	<div class="container">
@@ -13,7 +14,7 @@
 		<header class="header">
 			<div class="wrapper">
 				<div class="header-nav"><a href="#"></a></div>
-				<a class="nav-program" href="#">Training Program</a>
+				<a class="nav-program scroll" href="#program">Training Program</a>
 				<img class="header-logo" src="img/logo.png" alt="logo">
 				<div class="header-social">
 					<a class="icon icon-youtube" href="https://www.youtube.com/c/alekseytorokhtiy" target="_blank"></a>
@@ -39,11 +40,14 @@
 						<p>European and World championships medalist</p>
 					</div>
 				</div>
-				<div class="content-btn">Choose your option</div>
+				<div class="content-btn">
+				<a href="#program" class="scroll">Choose your option</a>
+				</div>
 			</div>
 		</div>
 		<!-- first-screen end -->
 		<!-- rates start -->
+		<a id="program"></a>
 		<div class="rates">
 			<div class="wrapper">
 				<div class="rates-title">
@@ -251,7 +255,7 @@
 					<div class="contacts-social">
 						<div class="first-couple">
 							<a class="section section-youtube" href="https://www.youtube.com/c/alekseytorokhtiy" target="_blank">
-								<p class="count">19 993</p>
+								<p class="count" id="test">19 993</p>
 								<p class="watching">Subscribers</p>
 							</a>
 							<a class="section section-fb" href="https://www.facebook.com/Torokhtiyo" target="_blank">
@@ -265,18 +269,32 @@
 								<p class="watching">Followers</p>
 							</a>
 							<a class="section section-vk" href="https://vk.com/torokhtiyo" target="_blank">
-								<p class="count">3 323</p>
+								<p class="count" id="vkontakte_count">3 323</p>
 								<p class="watching">Subscribers</p>
 							</a>
 						</div>
 					</div>
 				</div>
 				<div class="contacts-form">
-					
+					<div class="input-wrapper">
+						<input class="name" type="text">
+						<label>Name</label>
+					</div>
+					<div class="input-wrapper">
+						<input class="email" type="email">
+						<label>Email Address</label>
+					</div>
+					<div class="input-wrapper">
+						<textarea class="message"></textarea>
+						<label>Message</label>
+					</div>
+					<div class="contacts-btn">Submit</div>
 				</div>
 			</div>
+			<div class="contacts-copyright">© 2016 toroktiy.com. <span>All rights reserved.</span></div>
 		</div>
 		<!-- contacts end -->
 	</div>
+	<script src="common.js"></script>
 </body>
 </html>

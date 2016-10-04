@@ -534,7 +534,7 @@ template {
 /* + */
 /* + */
 /* temp style */
-.header .wrapper .header-request, .first-screen .first-screen-content .content-btn, .rates .rates-plans .plan .rates-btn, .camp .camp-content .camp-info .camp-info-btn {
+.header .wrapper .header-request, .first-screen .first-screen-content .content-btn, .rates .rates-plans .plan .rates-btn, .camp .camp-content .camp-info .camp-info-btn, .contacts .contacts-wrapper .contacts-form .contacts-btn {
   font-size: 15px;
   border: 2px solid #df1f1f;
   border-radius: 50px;
@@ -645,11 +645,11 @@ html, body {
   background: url(../img/social-icons.png) 69px 100%;
 }
 .header .wrapper .header-social .icon-inst {
-  background: url(../img/social-icons.png) 46px 0;
+  background: url(../img/social-icons.png) 47px 0;
   left: -5px;
 }
 .header .wrapper .header-social .icon-inst:hover {
-  background: url(../img/social-icons.png) 46px 100%;
+  background: url(../img/social-icons.png) 47px 100%;
 }
 .header .wrapper .header-social .icon-vk {
   background: url(../img/social-icons.png) 23px 0;
@@ -759,11 +759,9 @@ html, body {
 }
 .first-screen .first-screen-content .content-btn {
   margin: 33px 8px 33px 0;
-  padding: 19px 29px 17px;
+  width: 266px;
+  height: 53px;
   background-color: #df1f1f;
-  color: #fff;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
   -webkit-align-self: center;
       -ms-flex-item-align: center;
           align-self: center;
@@ -773,6 +771,17 @@ html, body {
 .first-screen .first-screen-content .content-btn:hover {
   background-color: #f42727;
   border-color: #f42727;
+}
+.first-screen .first-screen-content .content-btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  line-height: 53px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
 /* rates */
@@ -1546,7 +1555,7 @@ html, body {
   top: 17px;
   left: 0;
   width: 65px;
-  height: calc(100%);
+  height: calc(100% + 75px);
   background-color: #f5f5f5;
 }
 .contacts:after {
@@ -1555,7 +1564,7 @@ html, body {
   top: 17px;
   right: 0;
   width: 65px;
-  height: calc(100%);
+  height: calc(100% + 75px);
   background-color: #f5f5f5;
 }
 .contacts .contacts-title {
@@ -1564,17 +1573,24 @@ html, body {
   color: #1d1d22;
   text-align: center;
   text-transform: uppercase;
-  margin-top: 146px;
+  margin-top: 145px;
 }
 .contacts .contacts-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 72.5%;
-  margin: 0 auto;
+  margin: 91px auto 0;
 }
 .contacts .contacts-wrapper .contacts-info .mail {
   font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 26px;
   letter-spacing: 0.006em;
-  margin: 90px 0 20px;
 }
 .contacts .contacts-wrapper .contacts-info .mail:before {
   content: "";
@@ -1583,14 +1599,28 @@ html, body {
   height: 24px;
   background: url(../img/mail-phone.png);
   margin-right: 22px;
+  position: relative;
+  top: 1px;
 }
 .contacts .contacts-wrapper .contacts-info .mail a {
   color: #1d1d22;
   vertical-align: top;
+  text-decoration: none;
+}
+.contacts .contacts-wrapper .contacts-info .mail a:after {
+  content: "";
+  display: block;
+  width: 265px;
+  height: 1px;
+  margin-left: 65px;
+  margin-top: -4px;
+  background-color: #1d1d22;
 }
 .contacts .contacts-wrapper .contacts-info .phone {
   font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
   font-size: 26px;
+  letter-spacing: 0.01em;
+  margin-top: 23px;
 }
 .contacts .contacts-wrapper .contacts-info .phone:before {
   content: "";
@@ -1600,7 +1630,7 @@ html, body {
   background: url(../img/mail-phone.png) 100%;
   margin-right: 20px;
   position: relative;
-  top: 3px;
+  top: 4px;
 }
 .contacts .contacts-wrapper .contacts-info .phone a {
   color: #1d1d22;
@@ -1631,7 +1661,7 @@ html, body {
   font-family: "proxima-nova-semibold", Arial, "Helvetica Neue", Helvetica, sans-serif;
   background-color: #f4f4f4;
   font-size: 20px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.01em;
   line-height: 45px;
   color: #1d1d22;
   text-decoration: none;
@@ -1642,9 +1672,9 @@ html, body {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-transform: translateX(-17px);
-      -ms-transform: translateX(-17px);
-          transform: translateX(-17px);
+  -webkit-transform: translateX(-32px);
+      -ms-transform: translateX(-32px);
+          transform: translateX(-32px);
 }
 .contacts .contacts-wrapper .contacts-info .contacts-social .first-couple {
   display: -webkit-box;
@@ -1668,9 +1698,8 @@ html, body {
   text-decoration: none;
   box-sizing: border-box;
   border-right: 1px solid #e7e7e7;
-  width: 100px;
   margin-top: 65px;
-  padding-top: 12px;
+  padding: 12px 28px 0 28px;
 }
 .contacts .contacts-wrapper .contacts-info .contacts-social .section:before {
   content: "";
@@ -1695,10 +1724,10 @@ html, body {
   background: url(../img/social-icons.png) 69px 100%;
 }
 .contacts .contacts-wrapper .contacts-info .contacts-social .section-inst:before {
-  background: url(../img/social-icons.png) 46px 0;
+  background: url(../img/social-icons.png) 47px 0;
 }
 .contacts .contacts-wrapper .contacts-info .contacts-social .section-inst:hover:before {
-  background: url(../img/social-icons.png) 46px 100%;
+  background: url(../img/social-icons.png) 47px 100%;
 }
 .contacts .contacts-wrapper .contacts-info .contacts-social .section-vk:before {
   background: url(../img/social-icons.png) 23px 0;
@@ -1716,6 +1745,105 @@ html, body {
   color: #939393;
   margin-top: 2px;
   margin-bottom: 0;
+}
+.contacts .contacts-wrapper .contacts-form {
+  font-family: "proxima-nova-bold", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 18px;
+  color: #1d1d22;
+  width: 360px;
+  -webkit-transform: translateX(3px);
+      -ms-transform: translateX(3px);
+          transform: translateX(3px);
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper {
+  position: relative;
+  margin-top: 7px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper label {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .name, .contacts .contacts-wrapper .contacts-form .input-wrapper .email, .contacts .contacts-wrapper .contacts-form .input-wrapper .message {
+  width: 100%;
+  max-width: 100%;
+  padding-bottom: 8px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  border-bottom: 2px solid #000;
+  -webkit-transition: all .3s;
+          transition: all .3s;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .name:focus, .contacts .contacts-wrapper .contacts-form .input-wrapper .email:focus, .contacts .contacts-wrapper .contacts-form .input-wrapper .message:focus {
+  font-family: "proxima-nova-regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  border-bottom: 2px solid #df1f1f;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .name ~ label {
+  top: -3px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .name:focus ~ label, .contacts .contacts-wrapper .contacts-form .input-wrapper .has-content.name ~ label {
+  font-size: 13px;
+  color: #838383;
+  top: -25px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .email {
+  margin: 59px 0 39px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .email ~ label {
+  top: 57px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .email:focus ~ label, .contacts .contacts-wrapper .contacts-form .input-wrapper .has-content.email ~ label {
+  font-size: 13px;
+  color: #838383;
+  top: 35px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .message ~ label {
+  top: 18px;
+}
+.contacts .contacts-wrapper .contacts-form .input-wrapper .message:focus ~ label, .contacts .contacts-wrapper .contacts-form .input-wrapper .has-content.message ~ label {
+  font-size: 13px;
+  color: #838383;
+  top: -20px;
+}
+.contacts .contacts-wrapper .contacts-form .contacts-btn {
+  display: inline-block;
+  color: #df1f1f;
+  letter-spacing: 0.05em;
+  margin-top: 49px;
+  padding: 15px 28px 13px;
+  -webkit-transition: all .2s linear;
+          transition: all .2s linear;
+}
+.contacts .contacts-wrapper .contacts-form .contacts-btn:hover {
+  color: #fff;
+  background-color: #df1f1f;
+}
+.contacts .contacts-wrapper .contacts-form .contacts-btn:active {
+  background-color: #f31818;
+  border-color: #f31818;
+}
+.contacts .contacts-copyright {
+  position: relative;
+  font-family: "proxima-nova-regular", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 14px;
+  color: #1d1d22;
+  margin: 13px 0 0 181px;
+}
+.contacts .contacts-copyright span {
+  position: relative;
+  left: 8px;
+}
+.contacts .contacts-copyright:before {
+  content: "";
+  position: absolute;
+  top: -31px;
+  left: -2px;
+  width: 100px;
+  height: 2px;
+  background-color: #df1f1f;
 }
 
 @media screen and (max-width: 1200px) {
