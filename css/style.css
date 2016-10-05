@@ -1892,7 +1892,8 @@ html, body {
     display: none;
   }
   .header .wrapper .header-request {
-    padding: 11px 17px 10px;
+    font-size: 14px;
+    padding: 12px 21px 10px;
   }
 
   .first-screen {
@@ -2050,8 +2051,17 @@ html, body {
     width: 100%;
     height: 300px;
   }
+  .camp .camp-content .camp-info {
+    padding-top: 33px;
+  }
+  .camp .camp-content .camp-info .camp-info-header .block {
+    padding: 11px 17px;
+  }
+  .camp .camp-content .camp-info .camp-info-header .block-date:before, .camp .camp-content .camp-info .camp-info-header .block-site:before {
+    margin-right: 11px;
+  }
   .camp .camp-content .camp-info .camp-info-list {
-    padding-bottom: 5px;
+    padding-bottom: 7px;
   }
   .camp .camp-content .camp-info .camp-info-btn {
     font-size: 14px;
@@ -2210,6 +2220,134 @@ html, body {
   .contacts .contacts-copyright:before {
     top: -26px;
     left: -1px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 91.5%;
+  }
+
+  .header {
+    padding: 22px 0;
+  }
+  .header .wrapper .header-nav {
+    top: 0;
+    left: 2px;
+  }
+  .header .wrapper .header-logo {
+    top: -10px;
+    width: 56px;
+    padding: 0 10px;
+  }
+  .header .wrapper .header-request {
+    display: none;
+  }
+
+  .first-screen {
+    background: url(../img/first-screen-bg-small.png) 0 100% no-repeat;
+    min-height: 0;
+  }
+  .first-screen .first-screen-content {
+    margin: 0 auto;
+    padding-top: 45px;
+  }
+  .first-screen .first-screen-content .content-slogan {
+    width: 267px;
+  }
+  .first-screen .first-screen-content .online-program {
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    line-height: 24px;
+    text-transform: uppercase;
+    width: 270px;
+    margin: 31px auto 0;
+  }
+  .first-screen .first-screen-content .content-achievements {
+    display: none;
+  }
+  .first-screen .first-screen-content .content-btn {
+    width: 234px;
+    height: 40px;
+    margin: 80px auto 49px;
+  }
+  .first-screen .first-screen-content .content-btn a {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    line-height: 43px;
+  }
+
+  .rates {
+    padding-bottom: 81px;
+  }
+  .rates .rates-title h2 {
+    font-size: 38px;
+    line-height: 42px;
+    padding: 47px 0 45px;
+  }
+  .rates .rates-title h2 span {
+    padding: 0;
+  }
+  .rates .rates-plans {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .rates .rates-plans .plan {
+    padding: 18px 20px 89px;
+  }
+  .rates .rates-plans .plan h4 {
+    font-size: 14px;
+  }
+  .rates .rates-plans .plan .cost {
+    font-size: 30px;
+  }
+  .rates .rates-plans .plan ul {
+    margin-top: -4px;
+  }
+  .rates .rates-plans .plan ul li {
+    padding-right: 0;
+  }
+  .rates .rates-plans .plan .rates-btn {
+    padding: 11px 16px 10px;
+    bottom: 5px;
+  }
+  .rates .rates-plans .plan-free {
+    width: calc(33.33% - 5px);
+  }
+  .rates .rates-plans .plan-amateur {
+    width: calc(33.33% + 10px);
+  }
+  .rates .rates-plans .plan-amateur .cost:before {
+    top: -6px;
+  }
+  .rates .rates-plans .plan-pro {
+    width: calc(33.33% - 5px);
+  }
+  .rates .rates-plans .plan-pro .cost:before {
+    top: -6px;
+  }
+  .rates .rates-plans .plan-champion {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .rates .rates-plans .plan-champion .champion-circle {
+    margin-top: 22px;
+    margin-bottom: 43px;
+  }
+  .rates .rates-plans .plan-champion ul {
+    font-size: 0;
+  }
+  .rates .rates-plans .plan-champion ul li {
+    display: inline-block;
+    width: 33.3%;
+    font-size: 14px;
+    box-sizing: border-box;
+    vertical-align: top;
+    padding-right: 25px;
+  }
+  .rates .rates-plans .plan-champion .rates-btn {
+    position: absolute;
   }
 }
 

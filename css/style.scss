@@ -1284,7 +1284,8 @@ html, body {
 				display: none;
 			}
 			.header-request {
-				padding: 11px 17px 10px;
+				font-size: 14px;
+				padding: 12px 21px 10px;
 			}
 		}
 	}
@@ -1438,8 +1439,17 @@ html, body {
 				height: 300px;
 			}
 			.camp-info {
+				padding-top: 33px;
+				.camp-info-header {
+					.block {
+						padding: 11px 17px;
+						&-date:before, &-site:before {
+							margin-right: 11px;
+						}
+					}
+				}
 				.camp-info-list {
-					padding-bottom: 5px;
+					padding-bottom: 7px;
 				}
 				.camp-info-btn {
 					font-size: 14px;
@@ -1609,5 +1619,344 @@ html, body {
 }
 
 @media screen and (max-width: 768px) {
-	
+	.wrapper {
+		width: 91.5%;
+	}
+
+	.header {
+		padding: 22px 0;
+		.wrapper {
+			.header-nav {
+				top: 0;
+				left: 2px;
+			}
+			.header-logo {
+				top: -10px;
+				width: 56px;
+				padding: 0 10px;
+			}
+			.header-request {
+				display: none;
+			}
+		}
+	}
+
+	.first-screen {
+		background: url(../img/first-screen-bg-small.png) 0 100% no-repeat;
+		min-height: 0;
+		.first-screen-content {
+			margin: 0 auto;
+			padding-top: 45px;
+			.content-slogan {
+				width: 267px;
+			}
+			.online-program {
+				font-size: 13px;
+				letter-spacing: 0.12em;
+				line-height: 24px;
+				text-transform: uppercase;
+				width: 270px;
+				margin: 31px auto 0; 
+			}
+			.content-achievements {
+				display: none;
+			}
+			.content-btn {
+				width: 234px;
+				height: 40px;
+				margin: 80px auto 49px;
+				a {
+					font-size: 13px;
+					letter-spacing: 0.1em;
+					line-height: 43px;
+				}
+			}
+		}
+	}
+
+	.rates {
+		padding-bottom: 81px;
+		.rates-title {
+			h2 {
+				font-size: 38px;
+				line-height: 42px;
+				padding: 47px 0 45px;
+				span {
+					padding: 0;
+				}
+			}
+		}
+		.rates-plans {
+			flex-wrap: wrap;
+			.plan {
+				padding: 18px 20px 89px;
+				h4 {
+					font-size: 14px;
+				}
+				.cost {
+					font-size: 30px;
+				}
+				ul {
+					margin-top: -4px;
+					li {
+						padding-right: 0;
+					}
+				}
+				.rates-btn {
+					padding: 11px 16px 10px;
+					bottom: 5px;
+				}
+				&-free {
+					width: calc(33.33% - 5px);
+				}
+				&-amateur {
+					width: calc(33.33% + 10px);
+					.cost:before {
+						top: -6px;
+					}
+				}
+				&-pro {
+					width: calc(33.33% - 5px);
+					.cost:before {
+						top: -6px;
+					}
+				}
+				&-champion {
+					width: 100%;
+					margin-top: 0;
+					margin-bottom: 0;
+					.champion-circle {
+						margin-top: 22px;
+						margin-bottom: 43px;
+					}
+					ul {
+						font-size: 0;
+						li {
+							display: inline-block;
+    						width: 33.3%;
+    						font-size: 14px;
+    						box-sizing: border-box;
+    						vertical-align: top;
+    						padding-right: 25px;
+						}
+					}
+					.rates-btn {
+						position: absolute;
+					}
+				}
+			}		
+		}
+	}
+
+	// .instagram {
+	// 	padding-bottom: 160px;
+	// 	h3 {
+	// 		padding-top: 77px;
+	// 	}
+	// 	.followers-box {
+	// 		margin: 14px auto 82px;
+	// 	}
+	// 	.instagram-gallery .slide {
+	// 		height: calc(100% + 60px);
+	// 		top: -30px;
+	// 		width: calc(100% / 1.17);
+	// 	}
+	// 	.instagram-gallery .gallery-frame .horizontal-gap {
+	// 		margin-bottom: 3.9%;
+	// 	}
+	// 	.instagram-gallery .gallery-frame a {
+	// 		width: 22%;
+	// 	}
+	// }
+
+	// .camp {
+	// 	&:before, &:after {
+	// 		width: 10.2%;
+	// 	}
+	// 	.camp-content {
+	// 		width: 720px;
+	// 		flex-direction: column;
+	// 		.camp-img {
+	// 			background: url(../img/camp-img-wide.png) no-repeat;
+	// 			width: 100%;
+	// 			height: 300px;
+	// 		}
+	// 		.camp-info {
+	// 			padding-top: 33px;
+	// 			.camp-info-header {
+	// 				.block {
+	// 					padding: 11px 17px;
+	// 					&-date:before, &-site:before {
+	// 						margin-right: 11px;
+	// 					}
+	// 				}
+	// 			}
+	// 			.camp-info-list {
+	// 				padding-bottom: 7px;
+	// 			}
+	// 			.camp-info-btn {
+	// 				font-size: 14px;
+	// 				width: 108px;
+	// 				padding: 12px 0 9px;
+	// 				margin-top: 28px;
+	// 				letter-spacing: 0.01em;
+	// 			}
+	// 			.camp-info-btn-wrapper:after {
+	// 				width: 170px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// .youtube {
+	// 	.youtube-title {
+	// 		margin: 102px 0 77px;
+	// 	}
+	// 	.youtube-gallery {
+	// 		margin-bottom: 101px;
+	// 		a {
+	// 			width: 33.33%;
+	// 			margin-bottom: 21px;
+	// 			img {
+	// 				padding-bottom: 5px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// .testimonials {
+	// 	.testimonials-title {
+	// 		font-size: 26px;
+	// 		padding-top: 111px;
+	// 	}
+	// 	.slider {
+	// 		top: -134px;
+	// 		&:before {
+	// 			content: "";
+	// 			position: absolute;
+	// 			top: 75px;
+	// 			left: 0;
+	// 			width: 57px;
+	// 			height: 2px;
+	// 			background: $main-red;
+	// 			z-index: 1;
+	// 		}
+	// 		.prev-slide {
+	// 			display: none;
+	// 		}
+	// 		.active-slide {
+	// 			width: 73.6%;
+	// 			background-size: cover;
+	// 		}
+	// 		.next-slide {
+	// 			.next-slide-title {
+	// 				padding: 116px 0 0 22px;
+	// 				&:before {
+	// 					left: 0;
+	// 				}
+	// 				&:after {
+	// 					left: -53px;
+	// 					width: 53px;
+	// 				}
+	// 			}
+	// 		}
+	// 	}
+	// 	.slider-nav {
+	// 		top: -83px;
+	// 	}
+	// }
+
+	// .contacts {
+	// 	&:before, &:after {
+	// 		display: none;
+	// 	}
+	// 	.contacts-title {
+	// 		margin-top: 122px;
+	// 	}
+	// 	.contacts-wrapper {
+	// 		width: 96%;
+	// 		margin-top: 62px;
+	// 		.contacts-info {
+	// 			.mail {
+	// 				font-size: 20px;
+	// 				position: relative;
+	// 				top: 2px;
+	// 				&:before {
+	// 					width: 26px;
+	// 					height: 20px;
+	// 					background: url(../img/mail-phone-small.png);
+	// 					margin-right: 17px;
+	// 					left: 2px;
+	// 				}
+	// 				a:after {
+	// 					width: 205px;
+	// 					margin-left: 48px;
+	// 				}
+	// 			}
+	// 			.phone {
+	// 				font-size: 20px;
+	// 				margin-top: 16px;
+	// 				&:before {
+	// 					width: 26px;
+	// 					height: 20px;
+	// 					background: url(../img/mail-phone-small.png) 100%;
+	// 					margin-right: 15px;
+	// 					top: 2px;
+	// 					left: 2px;
+	// 				}
+	// 			}
+	// 			.other {
+	// 				margin-top: 14px;
+	// 				.other-viber {
+	// 					width: 42px;
+	// 					height: 42px;
+	// 					background: url(../img/viber-tg-small.png);
+	// 				}
+	// 				.other-tg {
+	// 					width: 41px;
+	// 					height: 42px;
+	// 					background: url(../img/viber-tg-small.png) 100%;
+	// 				}
+	// 				.other-phone {
+	// 					font-size: 18px;
+	// 					line-height: 40px;
+	// 					letter-spacing: 0;
+	// 				}
+	// 			}
+	// 			.contacts-social {
+	// 				flex-direction: column;
+	// 				transform: translateX(-10px);
+	// 				.section {
+	// 					margin-top: 38px;
+	// 					&-youtube {
+	// 						padding-right: 35px;
+	// 					}
+	// 				}
+	// 				.first-couple {
+	// 					.section:last-of-type {
+	// 						border: none;
+	// 						margin-left: 14px;
+	// 					}
+	// 				}
+	// 				.second-couple {
+	// 					margin-top: -7px;
+	// 					.section:last-of-type {
+	// 						margin-left: 9px;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 		.contacts-form {
+	// 			width: 343px;
+	// 			transform: translateX(-3px);
+	// 		}
+	// 	}
+	// 	.contacts-copyright {
+	// 		margin: 50px 0 55px 18px;
+	// 		&:before {
+	// 			top: -26px;
+	// 			left: -1px;
+	// 		}
+	// 	}
+	// }
 }
