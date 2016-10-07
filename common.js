@@ -35,6 +35,16 @@ $(document).ready(function(){
     	}
 	});
 
+	$(".header-request").click(function(event){
+		$("#popup").css("display", "block").animate({opacity: 1, top: 0}, 400);
+	});
+	$(".popup-close").click(function(){
+		$("#popup").animate({opacity: 0, top: "50px"}, 400,
+		 function(){
+			$(this).css("display", "none");
+		});
+	});
+
 });
 
 	

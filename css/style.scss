@@ -1268,6 +1268,145 @@ html, body {
 	}
 }
 
+/* popup request */
+
+#popup {
+	display: none;
+	position: fixed;
+	top: 50px;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $main-white;
+	z-index: 10;
+	opacity: 0;
+	.popup-close {
+		position: relative;
+		height: 61px;
+		background-color: #fafafa;
+		cursor: pointer;
+		&:hover {
+			background-color: #f5f5f5;
+		}
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			right: 0;
+			margin: 0 auto;
+			width: 27px;
+			height: 1px;
+			background-color: #232323;
+		}
+		&:before {
+			transform: rotate(45deg);
+		}
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+	.popup-body {
+		height: 80vh;
+		.popup-title {
+			margin: 0 auto;
+			font-family: $proxima-nova-bold;
+			font-size: 70px;
+			line-height: 10px;
+			text-transform: uppercase;
+			margin-top: 79px;
+			text-align: center;
+			p {
+				letter-spacing: 0.62em;
+				transform: translateX(23px);
+			}
+			span {
+				color: $main-red;
+				letter-spacing: 0;
+			}
+		}
+		.popup-form {
+			width: 79%;
+			margin: 93px auto 0;
+			font-family: $proxima-nova-bold;
+			font-size: 18px;
+			color: #1d1d22;
+			.input-wrapper {
+				position: relative;
+				margin-top: 7px;
+				label {
+					position: absolute;
+					left: 0;
+					z-index: -1;
+					transition: all .3s;
+				}
+				.name, .email, .message {
+					width: 100%;
+					max-width: 100%;
+					padding-bottom: 8px;
+					outline: none;
+					border: none;
+					background-color: transparent;
+					border-bottom: 2px solid $main-black;
+					transition: all .3s;
+					&:focus {
+						font-family: $proxima-nova-regular;
+						border-bottom: 2px solid $main-red;
+					}
+				}
+				.name ~ label {
+					top: -3px;
+				}
+				.name:focus ~ label, .has-content.name ~ label {
+					font-size: 13px;
+					color: #838383;
+					top: -20px;
+				}
+				.email {
+					margin: 46px 0 25px;
+					&~label {
+						top: 43px;
+					}
+				}
+				.email:focus ~ label, .has-content.email ~ label {
+					font-size: 13px;
+					color: #838383;
+					top: 25px;
+				}
+				.message {
+					padding-left: 0;
+					padding-right: 0;
+				}
+				.message ~ label {
+					top: 18px;
+				}
+				.message:focus ~ label, .has-content.message ~ label {
+					font-size: 13px;
+					color: #838383;
+					top: -20px;
+				}
+			}
+		}
+	}
+	.popup-submit {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 70px;
+		font-family: $proxima-nova-regular;
+		font-size: 23px;
+		letter-spacing: 0.2em;
+		line-height: 70px;
+		color: $main-white;
+		text-align: center;
+		text-transform: uppercase;
+		background-color: $main-red;
+		cursor: pointer;
+		&:hover {
+			background-color: #f42727;
+		}
+	}
+}
 
 
 
@@ -1306,7 +1445,7 @@ html, body {
 	.first-screen {
 		justify-content: center;
 		background: url(../img/first-screen-bg-medium.png) 0 100% no-repeat;
-		min-height: none;
+		min-height: 0;
 		.first-screen-content {
 			margin: 0 auto;
 			padding-top: 68px;
@@ -2059,6 +2198,40 @@ html, body {
 			&:before {
 				top: -35px;
 				left: 101px;
+			}
+		}
+	}
+
+	#popup {
+		.popup-close {
+			height: 49px;
+		}
+		.popup-body {
+			.popup-title {
+				font-size: 44px;
+				line-height: 6px;
+				margin-top: 54px;
+				p {
+					transform: translateX(14px);
+				}
+			}
+			.popup-form {
+				width: 91%;
+				margin-top: 66px;
+				.input-wrapper {
+					.email {
+						margin: 32px 0 9px;
+					}
+					.email ~ label {
+						top: 30px;
+					}
+					.email:focus ~ label, .has-content.email ~ label {
+						top: 10px;
+					}
+					.message:focus ~ label, .has-content.message ~ label {
+						top: -12px;	
+					}
+				}
 			}
 		}
 	}
