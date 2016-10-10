@@ -149,7 +149,7 @@ html, body {
 .first-screen {
 	display: flex;
 	justify-content: flex-end;
-	background: url(../img/first-screen-bg-big.png) 0 63px no-repeat;
+	background: url(../img/first-screen-bg-big.png) 0 100% no-repeat;
 	min-height: calc(100vh - 109px);
 	.first-screen-content {
 		margin-right: 153px;

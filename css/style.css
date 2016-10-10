@@ -683,7 +683,7 @@ html, body {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  background: url(../img/first-screen-bg-big.png) 0 63px no-repeat;
+  background: url(../img/first-screen-bg-big.png) 0 100% no-repeat;
   min-height: calc(100vh - 109px);
 }
 .first-screen .first-screen-content {
