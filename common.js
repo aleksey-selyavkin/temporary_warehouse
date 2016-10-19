@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     // vk subscribers
 	$.ajax({  
-		url: "http://api.vk.com/method/users.get?user_ids=12269207&fields=followers_count",
+		url: "https://api.vk.com/method/users.get?user_ids=12269207&fields=followers_count",
 		dataType: "jsonp",
 		success:function(e){ 
 				$("#vk-count").html(e.response[0].followers_count);
